@@ -1,18 +1,6 @@
-public class Persona {
-    //ATRIBUTOS
-    String nombre;
-    String apellido;
-    String email;
-    String celular;
+package persona;
 
-    //METODO
-    void mostrarPersona(){
-        System.out.println("Nombre: " + nombre);
-        System.out.println("Apellido: " + apellido);
-        System.out.println("Email: " + email);
-        System.out.println("Celular: " + celular);
-    }
-
+public class PruebaPersona {
     public static void main(String[] args) {
         System.out.println("CREACION DE CLASE Y OBJETOS DE TIPO PERSONA");
 
@@ -35,7 +23,4 @@ public class Persona {
         objeto2.mostrarPersona();
 
     }
-
-
 }
-
