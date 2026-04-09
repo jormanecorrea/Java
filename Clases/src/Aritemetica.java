@@ -2,6 +2,12 @@ public class Aritemetica {
     int operando1, operando2;
     //METODOS CLASE ARITMETICA
 
+    //METODO CONSTRUCTOR
+    public Aritemetica()
+    {
+        System.out.println("Ejecutando Metodo Contructor"); //Solo para probar que pase
+    }
+
     //METODO 1
     void sumar() {
         var suma = operando1 + operando2;
@@ -17,7 +23,7 @@ public class Aritemetica {
         System.out.println("EJEMPLO CLASE ARITMETICA");
 
         System.out.println("OBJETO 1:");
-        var aritmetica1 = new Aritemetica();
+        var aritmetica1 = new Aritemetica(); //Se crea constructor interno de forma automatica
         aritmetica1.operando1 = 5;
         aritmetica1.operando2 = 7;
         aritmetica1.sumar();
