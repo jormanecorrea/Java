@@ -1,3 +1,5 @@
+package aritmetica;
+
 public class OperadorThis {
     int operando1, operando2;
 

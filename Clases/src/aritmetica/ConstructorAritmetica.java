@@ -1,3 +1,5 @@
+package aritmetica;
+
 public class ConstructorAritmetica {
     int operando1, operando2;
 
