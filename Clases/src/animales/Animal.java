@@ -11,11 +11,20 @@ public class Animal {
     }
 
 }
-
+// CLASE HIJA DE LA CLASE ANIMAL
 class Perro extends Animal {
     protected void ladrar(){
         System.out.println("Puedo Ladrar");
     }
+
+    //Sobreescritura del metodo heredado de la clase padre Animal
+    @Override //Significa
+    protected void dormir(){
+        System.out.println("Duermo 8 horas al dia");
+        System.out.println("Metodo de la clase Padre: ");
+        super.dormir(); //Accede al metodo de la clase Padre
+    }
+
 }
 
 class PruebaAnimal {
@@ -29,7 +38,9 @@ class PruebaAnimal {
 
         System.out.println("\nClase hija: Soy un Perro");
         var perro1 = new Perro();
-        perro1.ladrar();
+        perro1.ladrar(); //Metodo de la clase hija
+        perro1.dormir(); //Metodo de la cls Padre Sobreescrito en la cls Hija
+        perro1.comer(); // Metodo de la clase padre
 
     }
 }
