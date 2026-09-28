@@ -1,47 +1,46 @@
 package animales;
-
+//CLASE PADRE
 public class Animal {
-    //METODOS:
-    //Protected: Solo es accesible por las clases hijas pero no desde otras clases
-    protected void comer(){
-        System.out.println("Como muchas veces al dia");
-    }
-    protected void dormir(){
-        System.out.println("Duermo muchas horas");
+    //Protected: Modificador de acceso, que indica que solo puede ser accedido por las clases hijas
+    protected void hacerSonido(){
+        System.out.println("El animal hace un sonido");
     }
 
 }
-// CLASE HIJA DE LA CLASE ANIMAL
-class Perro extends Animal {
-    protected void ladrar(){
-        System.out.println("Puedo Ladrar");
+// CLASE HIJA - PERRO -> Se usa extends para indicar que es una clase heredada
+class Perro extends Animal{
+    //@Override: indica que el metodo está sobrescribiendo un metodo que ya existe en la clase padre.
+    @Override
+    protected void hacerSonido(){
+        System.out.println("El perro ladra");
     }
-
-    //Sobreescritura del metodo heredado de la clase padre Animal
-    @Override //Significa
-    protected void dormir(){
-        System.out.println("Duermo 8 horas al dia");
-        System.out.println("Metodo de la clase Padre: ");
-        super.dormir(); //Accede al metodo de la clase Padre
-    }
-
 }
 
-class PruebaAnimal {
+class Gato extends Animal{
+    @Override
+    protected void hacerSonido(){
+        System.out.println("El gato Maulla");
+    }
+}
+
+
+class PruebaAnimal{
+
+    //Metodo Polimorfico:
+    static void imprimirSonido(Animal animal){
+        animal.hacerSonido();
+    }
+
     public static void main(String[] args) {
-        System.out.println(" *** EJEMPLO HERENCIA ***");
-        System.out.println("Soy un Animal");
-        var animal1 = new Animal();
-        animal1.comer();
-        animal1.dormir();
-        // animal1.Ladrar(); --> Este metodo no existe en la clase padre
+        //OBjeto de la clase Padre(Animal)
+        var animal = new Animal();
+        imprimirSonido(animal);
 
-        System.out.println("\nClase hija: Soy un Perro");
-        var perro1 = new Perro();
-        perro1.ladrar(); //Metodo de la clase hija
-        perro1.dormir(); //Metodo de la cls Padre Sobreescrito en la cls Hija
-        perro1.comer(); // Metodo de la clase padre
+        var perro = new Perro();
+        imprimirSonido(perro);
+
+        var gato = new Gato();
+        imprimirSonido(gato);
 
     }
 }
-
